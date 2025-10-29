@@ -1,0 +1,93 @@
+
+새 프로젝트 
+
+- New > Spring Legacy Project > Spring MVC Project
+- Project name: "SecurityTest"
+- root package: "com.test.java"
+
+
+-------------------------------------------------------
+
+
+현재 프로젝트 버전 수정하기
+
+1. 자바 버전 > 11
+	- pom.xml
+	- 프로젝트 > 우측버튼 > Properties > Project facets
+	
+2. 스프링 버전 > 5.0.7
+	- pom.xml
+
+
+-------------------------------------------------------
+
+Spring Security
+- 스프링 기반 애플리케이션의 보안을 담당하는 하위 프레임워크
+- 보안(인증, 허가, 권한 관리 등)
+- 인증: 사용자가 누구인지를 확인하는 작업(로그인, 사인인)
+- 허가: 미인증/인증된 사용자가 어떤 자원에 접근할 수 있는 검사
+- 서블릿 필터 + 스프링 인터셉터
+
+1. 세션 기반 인증
+2. JWT(토큰 기반 인증) > 세션리스
+3. 세션 + OAuth2 기반 인증(소셜 인증)
+4. JWT + OAuth2 기반 인증(소셜 인증)
+
+
+-------------------------------------------------------
+
+시큐리티 설정하기
+- pom.xml
+	- log4j
+	- lombok
+	- jdbc
+	- mybatis
+	- hikaricp
+	 
+
+-------------------------------------------------------
+	 
+MyBatis 설정하기(인터페이스 매퍼 사용)
+- root-context.xml
+- src/main/java > "com.test.java.model" > "SecurityMapper.java"(I)
+
+- 테스트
+	- src/test/java > "com.test.java.model" > "DBTests.java"
+	
+
+-------------------------------------------------------
+
+시큐리티 설정하기
+- pom.xml
+- 4개
+
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-core</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-config</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-web</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-taglibs</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>
+
+
+
+
+
+
+
+
+
+	
