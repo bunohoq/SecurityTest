@@ -28,6 +28,12 @@
 	<div>
 		<button class="in">로그인</button>
 	</div>
+	
+	<!-- CSRF 토큰 : 지금 POST 요청은 내가 직접하는것이다. 
+		
+	<input type="hidden" name="_csrf" value="6588cd74-eb04-49c1-b786-e3f4b79daf69">	
+	-->
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	</form>
 </body>
 </html>

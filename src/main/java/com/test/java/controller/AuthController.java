@@ -17,5 +17,10 @@ public class AuthController {
 		
 		return "auth/customlogin";
 	}
+	@GetMapping("/customlogout.do")
+	public String customlogout() {
+		
+		return "auth/customlogout";
+	}
 
 }

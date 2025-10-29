@@ -10,6 +10,9 @@
 	<!-- 403 핸들러 -->
 	<bean id="customAccessDeniedHandler" class="com.test.java.auth.CustomAccessDeniedHandler"/>
 	
+	<!-- 로그인 성공 핸들러 -->
+	<bean id="customLoginSuccessHandler" class="com.test.java.auth.CustomLoginSuccessHandler" />
+	
 	<!-- 3. 기본 설정 -->
 	<!-- 
 	<security:http>
@@ -37,7 +40,22 @@
 		<!-- 8.1 403처리 -->
 		<security:access-denied-handler ref="customAccessDeniedHandler"/>
 		
-		<security:form-login/>
+		<!-- 9. 기본설정: 자동 생성 로그인 페이지 사용 -->
+		<!-- <security:form-login/> -->
+		
+		<!-- 9. 커스텀 로그인 페이지 생성 -->
+		<security:form-login login-page="/customlogin.do"/>
+		
+		<!-- 9.1 CSRF 공격에 대한 방어를 무시 -->
+		<!-- <security:csrf disabled="true"/> -->
+		
+		<!-- 10. 로그아웃 처리 -->
+		<security:logout logout-url="/customlogout.do" invalidate-session="true" logout-success-url="/index.do"/>
+		
+		<!-- 11. 로그인 핸들러 연결 -->
+		<security:form-login login-page="/customlogin.do" authentication-success-handler-ref="customLoginSuccessHandler"/>
+		
+		
 	</security:http>
 
 	<security:authentication-manager>
