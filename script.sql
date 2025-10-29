@@ -29,3 +29,30 @@ commit;
 
 select * from users;
 select * from authorities;
+
+create table member (
+    memberid varchar2(50) primary key ,         -- 아이디(username)
+    memberpw varchar2(100) not null,            -- 암호
+    membername varchar2(50) not null,           -- 이름
+    email varchar2(100) not null,               -- 이메일
+    gender char(1) not null,                    -- 성별
+    enabled char(1) default '1',                -- 활동 유무
+    regdate date default sysdate not null       -- 회원가입 날짜
+);
+
+create table member_auth (
+    memberid varchar2(50) not null,
+    auth varchar2(50) not null,
+    constraint fk_member_auth foreign key(memberid) references member(memberid)
+);
+
+commit;
+
+select * from member;
+
+insert into member_auth values ('dog', 'ROLE_MEMBER');
+insert into member_auth values ('cat', 'ROLE_MEMBER');
+insert into member_auth values ('tiger', 'ROLE_MEMBER');
+insert into member_auth values ('tiger', 'ROLE_ADMIN');
+
+commit;

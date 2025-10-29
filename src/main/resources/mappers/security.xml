@@ -9,17 +9,10 @@
 		select sysdate from dual
 	</select>
 	
+	<insert id="add" parameterType="com.test.java.model.MemberDTO">
+	
+		insert into member (memberid, memberpw, membername, email, gender, enabled, regdate) values (#{memberid}, #{memberpw}, #{membername}, #{email}, #{gender}, default, default)
+	
+	</insert>
+	
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
