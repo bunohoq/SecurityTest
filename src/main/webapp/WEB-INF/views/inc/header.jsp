@@ -41,6 +41,12 @@
 		<li><a href="/java/customlogout.do">Logout</a></li>
 		</sec:authorize>
 		
+		<li class="divider"></li>
+		
+		<sec:authorize access="isAnonymous()">
+		<li><a href="/java/register.do">Register</a></li>
+		</sec:authorize>
+		
 	</ul>
 </header>
 

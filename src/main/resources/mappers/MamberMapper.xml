@@ -2,19 +2,16 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-<mapper namespace="com.test.java.model.SecurityMapper">
-	
-	<select id="time" resultType="String">
-		select sysdate from dual
-	</select>
+   
+<mapper namespace="com.test.java.model.MemberMapper">
 	
 	<insert id="add" parameterType="com.test.java.model.MemberDTO">
 	
 		insert into member (memberid, memberpw, membername, email, gender, enabled, regdate) values (#{memberid}, #{memberpw}, #{membername}, #{email}, #{gender}, default, default)
+		
+	</insert>	
 	
-	</insert>
-	
-	
+	<insert id="addAuth" parameterType="com.test.java.model.AuthDTO">
+		insert into member_auth values (#{memberid}, #{auth})	</insert>
 	
 </mapper>

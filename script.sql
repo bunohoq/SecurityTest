@@ -49,6 +49,8 @@ create table member_auth (
 commit;
 
 select * from member;
+delete from member where membername = '미야옹';
+
 
 insert into member_auth values ('dog', 'ROLE_MEMBER');
 insert into member_auth values ('cat', 'ROLE_MEMBER');
