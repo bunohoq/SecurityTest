@@ -6,4 +6,6 @@ public interface MemberMapper {
 
 	void addAuth(AuthDTO adto);
 
+	MemberDTO get(String username);
+
 }

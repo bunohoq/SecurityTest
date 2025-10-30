@@ -24,7 +24,8 @@
 	-->
 	<bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	
-	
+	<!-- 18. 17번 기반 + 로그인 처리 + 인증 정보 관리  -->
+	<bean id="" class="com.test.java.auth.CustomUserDetailsService"></bean>
 	
 	<!-- 3. 기본 설정 -->
 	<!-- 

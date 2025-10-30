@@ -11,6 +11,19 @@ import com.test.java.model.MemberMapper;
 
 import lombok.RequiredArgsConstructor;
 
+/*
+ 	스프링 빈 만들기
+ 	
+ 	1. XML 방식
+ 	- <bean clss="com.test.java.MemberController" id="m1">
+ 	
+ 	2. 어노테이션 방식 > memberController
+ 	- @Component("m1)
+ 	  public class MemberController {}
+ 
+ 
+ */
+
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
